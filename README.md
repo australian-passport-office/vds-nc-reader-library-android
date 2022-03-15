@@ -1,17 +1,3 @@
-<style>
-    summary{
-        color: #03fcf8;
-        
-    }
-    summary:hover{
-        cursor: pointer;
-    }
-    details{
-        margin-left:20px;
-    }
-    
-</style>
-
 # VDS-NC Checker Library for Android
 
 To better inform your usage of this library, please see [here](https://www.passports.gov.au/vds-nc-checker) for the business case for the original VDS-NC Checker.
