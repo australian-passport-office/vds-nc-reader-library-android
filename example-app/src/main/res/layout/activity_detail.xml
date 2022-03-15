@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".DetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/sectionHeader"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/headingHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelType"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/labelType"
+            app:layout_constraintEnd_toStartOf="@id/guidelineValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sectionHeader" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="8dp"
+            app:constraint_referenced_ids="labelType,valueType" />
+
+        <TextView
+            android:id="@+id/labelVersion"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/labelVersion"
+            app:layout_constraintEnd_toStartOf="@id/guidelineValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrierType" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="8dp"
+            app:constraint_referenced_ids="labelVersion,valueVersion" />
+
+        <TextView
+            android:id="@+id/labelIssuingCountry"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/labelIssuingCountry"
+            app:layout_constraintEnd_toStartOf="@id/guidelineValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrierVersion" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierIssuingCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="8dp"
+            app:constraint_referenced_ids="labelIssuingCountry,valueIssuingCountry" />
+
+        <TextView
+            android:id="@+id/valueType"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineValue" />
+
+        <TextView
+            android:id="@+id/valueVersion"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelVersion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineValue" />
+
+        <TextView
+            android:id="@+id/valueIssuingCountry"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelIssuingCountry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineValue" />
+
+
+        <TextView
+            android:id="@+id/sectionMessage"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/headingMessage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrierIssuingCountry" />
+
+        <TextView
+            android:id="@+id/labelUvci"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/labelUvci"
+            app:layout_constraintEnd_toStartOf="@id/guidelineValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sectionMessage" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierUvci"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="8dp"
+            app:constraint_referenced_ids="labelUvci,valueUvci" />
+
+        <TextView
+            android:id="@+id/labelName"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/labelName"
+            app:layout_constraintEnd_toStartOf="@id/guidelineValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrierUvci" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="8dp"
+            app:constraint_referenced_ids="labelName,valueName" />
+
+        <TextView
+            android:id="@+id/labelDob"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/labelDob"
+            app:layout_constraintEnd_toStartOf="@id/guidelineValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrierName" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierDob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="8dp"
+            app:constraint_referenced_ids="labelDob,valueDob" />
+
+        <TextView
+            android:id="@+id/labelTravelDocumentNo"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/labelTravelDocumentNo"
+            app:layout_constraintEnd_toStartOf="@id/guidelineValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrierDob" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierTravelDocumentNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="8dp"
+            app:constraint_referenced_ids="labelTravelDocumentNo,valueTravelDocumentNo" />
+
+        <TextView
+            android:id="@+id/labelOtherDocumentNo"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/labelOtherDocumentNo"
+            app:layout_constraintEnd_toStartOf="@id/guidelineValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrierTravelDocumentNo" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierOtherDocumentNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="8dp"
+            app:constraint_referenced_ids="labelOtherDocumentNo,valueOtherDocumentNo" />
+
+        <TextView
+            android:id="@+id/labelSex"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/labelSex"
+            app:layout_constraintEnd_toStartOf="@id/guidelineValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrierOtherDocumentNo" />
+
+        <TextView
+            android:id="@+id/valueUvci"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelUvci"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineValue" />
+
+        <TextView
+            android:id="@+id/valueName"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineValue" />
+
+        <TextView
+            android:id="@+id/valueDob"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelDob"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineValue" />
+
+        <TextView
+            android:id="@+id/valueTravelDocumentNo"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelTravelDocumentNo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineValue" />
+
+        <TextView
+            android:id="@+id/valueOtherDocumentNo"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelOtherDocumentNo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineValue" />
+
+        <TextView
+            android:id="@+id/valueSex"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelSex"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineValue" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintTop_toBottomOf="@id/labelSex"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/vaccination_event_item">
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

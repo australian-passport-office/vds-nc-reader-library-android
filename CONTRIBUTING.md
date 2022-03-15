@@ -1,0 +1,1 @@
+This GitHub repository is used by the Australian Passport Office as a publishing point only. Development of this software is managed outside of this repository. Any contributions submitted as pull requests will not be directly included into this repository. This code may influence or be used in future releases.

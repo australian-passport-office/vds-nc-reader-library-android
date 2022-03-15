@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/scan_screen_preferences">
+        <EditTextPreference
+            app:key="scan_screen_navigation_title"
+            app:title="Navigation Title"
+            app:defaultValue="@string/app_name"
+            />
+
+        <EditTextPreference
+            app:key="scan_screen_invalid_vds_nc_label"
+            app:title="Invalid VDS NC"
+            app:defaultValue="@string/invalidCode"
+            />
+
+        <EditTextPreference
+            app:key="scan_screen_guide_label"
+            app:title="Guide Label"
+            app:defaultValue="@string/scanGuideLabelText"
+            />
+
+        <EditTextPreference
+            app:key="scan_screen_clr_warning_label"
+            app:title="CLR Warning Label"
+            app:defaultValue="@string/connectToInternetWarning"
+            />
+
+        <CheckBoxPreference
+            app:key="scan_screen_torch_preference"
+            app:title="@string/scan_screen_torch_preference"
+            app:defaultValue="false"
+            />
+
+        <CheckBoxPreference
+            app:key="scan_screen_zoom_preference"
+            app:title="@string/scan_screen_zoom_preference"
+            app:defaultValue="false"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/scan_validation_preferences">
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

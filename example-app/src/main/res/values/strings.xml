@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">VDS-NC Example App</string>
+
+    <string name="importVdsPdfButton">Import VDS PDF</string>
+    <string name="readValidVdsButton">Read valid VDS</string>
+    <string name="readNonVdsButton">Read non-VDS</string>
+    <string name="readInvalidVdsButton">Read invalid VDS</string>
+
+    <string name="headingHeader">Header</string>
+    <string name="headingMessage">Message</string>
+    <string name="headingEvent">Vaccination Event</string>
+    <string name="headingDetail">Vaccination Detail</string>
+    <string name="labelType">Type</string>
+    <string name="labelVersion">Version</string>
+    <string name="labelIssuingCountry">Issuing Country</string>
+    <string name="labelUvci">UVCI</string>
+    <string name="labelName">Name</string>
+    <string name="labelDob">Date of birth</string>
+    <string name="labelTravelDocumentNo">Travel Document Number</string>
+    <string name="labelOtherDocumentNo">Other Document Number</string>
+    <string name="labelSex">Sex</string>
+    <string name="labelVaccine">Vaccine or Prophylaxis</string>
+    <string name="labelBrand">Vaccine brand</string>
+    <string name="labelDiseaseOrAgent">Disease or agent targeted</string>
+    <string name="labelDateOfVaccination">Date of vaccination</string>
+    <string name="labelDoseNo">Dose number</string>
+    <string name="labelCountry">Country of vaccination</string>
+    <string name="labelAdminCentre">Administering centre</string>
+    <string name="labelBatchNo">Vaccine batch number</string>
+    <string name="labelDueDate">Due date of next dose</string>
+    <string name="noVds">No VDS</string>
+    <string name="noVdsDescription">Unable to find a VDS</string>
+    <string name="invalidVdsTitle">Invalid VDS</string>
+    <string name="genericError">Error</string>
+    <string name="pdfProcessError">Error processing PDF</string>
+    <string name="invalidVdsDescription">This JSON is an invalid / not authentic VDS</string>
+    <string name="notVdsTitle">Not a VDS</string>
+    <string name="notVdsDescription">This is not a VDS</string>
+
+    <string name="headingAttributions">Attributions</string>
+    <string name="scanAction">ScanAction</string>
+    <string name="descriptionAttributions">This app uses the following third-party libraries:</string>
+</resources>

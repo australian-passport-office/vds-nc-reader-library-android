@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.5.31'
+}
+
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug{
+
+        }
+    }
+
+    def variantsToCopy = ["Release", "Debug"]
+
+    libraryVariants.all { variant ->
+
+        def outputTargetFile = "vdsncchecker-library.aar"
+        def outputTargetDir = "${rootDir}/example-app/src/main/libs"
+
+        def taskSuffix = variant.name.capitalize()
+        def assembleTaskName = "assemble${taskSuffix}"
+
+        println("Find task name- ${assembleTaskName}")
+        if(variantsToCopy.contains(taskSuffix) && tasks.findByName(assembleTaskName)){
+            println("found ${assembleTaskName}")
+
+            def outputNumber = 0
+            variant.outputs.each{ output ->
+                def taskName = "output${outputNumber}_${taskSuffix}"
+                println("Creating task - ${taskName}")
+                println("Copy from ${buildDir}")
+                println("To ${outputTargetDir}")
+                def copyTask = tasks.create(name: "${taskName}", type:Copy){
+                    description("copy aar file to example app")
+                    from("${buildDir}/outputs/aar"){
+                        include "${output.outputFile.name}"
+                    }
+                    into outputTargetDir
+                    eachFile { file ->
+
+                        file.path = outputTargetFile
+                        println("Updating file path to  ${file.path}")
+
+                    }
+                    includeEmptyDirs = false
+                }
+                tasks[assembleTaskName].finalizedBy = [copyTask]
+                outputNumber++
+            }
+
+
+        }
+
+//        variant.outputs.each{ output ->
+//            def outputFile = output.outputFile
+//            if(outputFile != null && variant.name == "for-example" && outputFile.name.endsWith(".aar")){
+//                output.outputFileName = outputTarget
+//            }
+//        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.10.2'
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.test.ext:junit-ktx:1.1.3'
+    implementation 'androidx.preference:preference-ktx:1.1.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+
+    implementation "org.bouncycastle:bcpkix-jdk15to18:$bouncyCastleVersion"
+    implementation "io.github.erdtman:java-json-canonicalization:$jsonCanonicalizationVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinXSerializationVersion"
+
+}

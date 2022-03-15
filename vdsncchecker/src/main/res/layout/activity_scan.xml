@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:filterTouchesWhenObscured="true"
+    tools:context="au.gov.dfat.lib.vdsncchecker.ui.ScanActivity">
+
+    <!-- placeholder for camera view -->
+    <au.gov.dfat.lib.vdsncchecker.camera.CameraWrapper
+        android:id="@+id/camera_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/footer"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+    </au.gov.dfat.lib.vdsncchecker.camera.CameraWrapper>
+
+
+    <au.gov.dfat.lib.vdsncchecker.camera.GraphicOverlay
+        android:id="@+id/graphic_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="@id/camera_view"
+        app:layout_constraintRight_toRightOf="@id/camera_view"
+        app:layout_constraintTop_toTopOf="@id/camera_view"
+        app:layout_constraintBottom_toBottomOf="@id/camera_view" />
+
+    <!-- Zoom/Torch buttons -->
+    <ImageView
+        android:id="@+id/zoom_button"
+        android:adjustViewBounds="true"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="@id/camera_view"
+        app:layout_constraintEnd_toEndOf="@id/camera_view"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/torch_button"
+        android:adjustViewBounds="true"
+        android:padding="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/camera_view"
+        app:layout_constraintEnd_toEndOf="@id/camera_view"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/buttonGuidline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/camera_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/footerBackground"
+        android:paddingVertical="@dimen/frame_padding_large">
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_horizontal"
+        android:text="@string/scanGuideLabelText" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+        android:id="@+id/warningBanner"
+        layout="@layout/warning_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/invalidCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/invalid_code_background"
+        android:text="@string/invalidCode"
+        app:layout_constraintLeft_toLeftOf="@id/camera_view"
+        app:layout_constraintRight_toRightOf="@id/camera_view"
+        app:layout_constraintTop_toTopOf="@id/camera_view"
+        app:layout_constraintBottom_toBottomOf="@id/camera_view"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- must be done after APK generation ( crc32 of classes.dex ) -->
+    <string name="dex_crc"></string>
+    <string name="app_name">VDS-NC Checker</string>
+
+    <!-- Scan Screen -->
+    <string name="cameraAccessTitle">Camera access</string>
+    <string name="cameraAccessDescription">The %1$s app uses your device\'s camera to scan QR codes from vaccination certificates.\nYou will now be prompted to allow the app to use your camera.</string>
+    <string name="scanTitle">VDS-NC Checker</string>
+    <string name="scanGuideLabelText">Align QR code within frame</string>
+    <string name="testScan">Test Scan</string>
+    <string name="scanConfig">Scan Config</string>
+    <string name="connectToInternetWarning">For correct results, connect to internet for product update</string>
+    <string name="invalidCode">This code is not a VDS-NC</string>
+    <string name="cameraPermissionsTitle">Camera permissions required</string>
+    <string name="cameraPermissionsText">To continue, you will need to grant permissions to the camera in App info</string>
+    <string name="appInfoButton">App info</string>
+    <!-- end scan screen -->
+
+
+    <string name="readValidVdsButton">Read valid VDS</string>
+    <string name="readNonVdsButton">Read non-VDS</string>
+    <string name="readInvalidVdsButton">Read invalid VDS</string>
+
+    <string name="headingHeader">Header</string>
+    <string name="headingMessage">Message</string>
+    <string name="headingEvent">Vaccination Event</string>
+    <string name="headingDetail">Vaccination Detail</string>
+    <string name="labelType">Type</string>
+    <string name="labelVersion">Version</string>
+    <string name="labelIssuingCountry">Issuing Country</string>
+    <string name="labelUvci">UVCI</string>
+    <string name="labelName">Name</string>
+    <string name="labelDob">Date of birth</string>
+    <string name="labelTravelDocumentNo">Travel Document Number</string>
+    <string name="labelOtherDocumentNo">Other Document Number</string>
+    <string name="labelSex">Sex</string>
+    <string name="labelVaccine">Vaccine or Prophylaxis</string>
+    <string name="labelBrand">Vaccine brand</string>
+    <string name="labelDiseaseOrAgent">Disease or agent targeted</string>
+    <string name="labelDateOfVaccination">Date of vaccination</string>
+    <string name="labelDoseNo">Dose number</string>
+    <string name="labelCountry">Country of vaccination</string>
+    <string name="labelAdminCentre">Administering centre</string>
+    <string name="labelBatchNo">Vaccine batch number</string>
+    <string name="labelDueDate">Due date of next dose</string>
+
+    <string name="invalidVdsTitle">Invalid VDS</string>
+    <string name="invalidVdsDescription">This JSON is an invalid / not authentic VDS</string>
+    <string name="notVdsTitle">Not a VDS</string>
+    <string name="notVdsDescription">This is not a VDS</string>
+
+    <string name="headingAttributions">Attributions</string>
+    <string name="descriptionAttributions">This app uses the following third-party libraries:</string>
+    <string name="title_activity_scan">ScanActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- Preference Titles -->
+    <string name="scan_screen_preferences">Scan Settings</string>
+    <string name="scan_validation_preferences">Verification Settings</string>
+    <string name="scan_screen_torch_preference">Torch Enabled</string>
+    <string name="scan_screen_zoom_preference">Zoom Enabled</string>
+    <string name="scan_targets_preference">UVCI Scan Targets</string>
+
+
+    <string name="scan_screen_torch_pref">scan_screen_torch_preference</string>
+    <string name="scan_screen_zoom_pref">scan_screen_zoom_preference</string>
+    <string name="scan_screen_setting_banner">Scan Settings</string>
+
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>
